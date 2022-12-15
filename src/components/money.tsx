@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {NewMoney} from "./NewMoney";
 
 
-export type FilterType= 'All' | 'Dollars' | 'Rubles'
+export type FilterType = 'All' | 'Dollars' | 'Rubles'
 
 
 export type MoneyType = {
@@ -13,26 +13,26 @@ export type MoneyType = {
 
 export const MoneyFilter = () => {
     const [money, setMoney] = useState<Array<MoneyType>>([
-        { banknote: 'Dollars', value: 100, numberId: ' a1234567890' },
-        { banknote: 'Dollars', value: 50, numberId: ' z1234567890' },
-        { banknote: 'RUBLS', value: 100, numberId: ' w1234567890' },
-        { banknote: 'Dollars', value: 100, numberId: ' e1234567890' },
-        { banknote: 'Dollars', value: 50, numberId: ' c1234567890' },
-        { banknote: 'RUBLS', value: 100, numberId: ' r1234567890' },
-        { banknote: 'Dollars', value: 50, numberId: ' x1234567890' },
-        { banknote: 'RUBLS', value: 50, numberId: ' v1234567890' },
+        {banknote: 'Dollars', value: 100, numberId: ' a1234567890'},
+        {banknote: 'Dollars', value: 50, numberId: ' z1234567890'},
+        {banknote: 'RUBLS', value: 100, numberId: ' w1234567890'},
+        {banknote: 'Dollars', value: 100, numberId: ' e1234567890'},
+        {banknote: 'Dollars', value: 50, numberId: ' c1234567890'},
+        {banknote: 'RUBLS', value: 100, numberId: ' r1234567890'},
+        {banknote: 'Dollars', value: 50, numberId: ' x1234567890'},
+        {banknote: 'RUBLS', value: 50, numberId: ' v1234567890'},
     ])
 
 
-        let currentMoney = money;
+    let currentMoney = money;
 
     const [filter, setFilter] = useState<FilterType>('All')
 
-        if (filter == 'Rubles') {
-            currentMoney = money.filter((ruble) => ruble.banknote == 'RUBLS')
-        } else if (filter == 'Dollars'){
-            currentMoney = money.filter((ruble) => ruble.banknote == 'Dollars')
-        }
+    if (filter == 'Rubles') {
+        currentMoney = money.filter((ruble) => ruble.banknote == 'RUBLS')
+    } else if (filter == 'Dollars') {
+        currentMoney = money.filter((ruble) => ruble.banknote == 'Dollars')
+    }
 
     const filterMoney = (filter: FilterType) => {
         setFilter(filter)
