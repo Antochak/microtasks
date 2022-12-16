@@ -7,7 +7,7 @@ type StudentsType = {
 }
 type ComponentType = {
     students: Array<StudentsType>
-    DeleteStudent: Function
+    DeleteStudent: (id: number)=>void
 }
 
 export const Student = () => {
@@ -43,16 +43,12 @@ export const Student = () => {
         setStudent(students.filter(student => student.id !== id))
         console.log(students)
     }
-
-
     return (
         <div>
-
             <ul>
                 {students.map((student) => <li key={student.id}>
-                        {student.name} age:
-                        {student.age}
-                        <button onClick={() => DeleteStudent(student.id)}>Delete</button>
+                    <button onClick={() => DeleteStudent(student.id)}>Delete</button> -
+                        {student.name}, age:  {student.age}
                     </li>
                 )}
             </ul>

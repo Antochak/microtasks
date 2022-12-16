@@ -37,24 +37,24 @@ export const MoneyFilter = () => {
     const filterMoney = (filter: FilterType) => {
         setFilter(filter)
     }
-    const DeleteBanknote = (numberId: string) => {
-        console.log(money)
-        setMoney(money.filter(paper => paper.numberId !== numberId))
-
-    }
+    // const DeleteBanknote = (numberId: string) => {
+    //     console.log(money)
+    //     setMoney(money.filter(paper => paper.numberId !== numberId))
+    //
+    // }
     return (
-        <NewMoney filterMoney={filterMoney} currentMoney={currentMoney} deleteBanknote={DeleteBanknote}/>
-        // <>
-        //     <ul>
-        //         {currentMoney.map((paper, index) => <li key={index}>
-        //             <span>{paper.banknote}</span>
-        //             <span>{paper.value}</span>
-        //             <span>{paper.number}</span>
-        //         </li>)}
-        //     </ul>
-        //     <button onClick={()=>filterMoney('Rubles')}> Rubles </button>
-        //     <button onClick={()=>filterMoney('Dollars')}> Dollars </button>
-        //
-        // </>
+        // <NewMoney filterMoney={filterMoney} currentMoney={currentMoney} deleteBanknote={DeleteBanknote}/>
+        <>
+            <ul>
+                {currentMoney.map((paper, index) => <li key={index}>
+                    <span>{paper.banknote}</span>
+                    <span>{paper.value}</span>
+                    <span>{paper.numberId}</span>
+                </li>)}
+            </ul>
+            <button onClick={()=>filterMoney('Rubles')}> Rubles </button>
+            <button onClick={()=>filterMoney('Dollars')}> Dollars </button>
+
+        </>
     )
 }
